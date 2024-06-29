@@ -4,19 +4,21 @@ int main() {
 	std::cout << "You entered the vault of the ancient vampire." << std::endl;
 	std::cout << "You need to guess three digits to open the mechanical lock!" << std::endl;
 	
-	int a = 4; //declaration statement
-	int b = 4;
-	int c = 4;
+	int CodeA = 4; //declaration statement
+	int CodeB = 4;
+	int CodeC = 4;
 
 	//a = 66666l;
 
-	int sum = a + b + c; //expression statement
-	int multp = a * b * c;
+	int CodeSum = CodeA + CodeB + CodeC; //expression statement
+	int CodeProduct = CodeA * CodeB * CodeC;
 
 	std::cout << std::endl;
 	std::cout << "+ There are three numbers in the code" << std::endl;
-	std::cout << "+ They sum add-up to: " << sum << std::endl;
-	std::cout << "+ They multiply to: "<< multp << std::endl;
+	std::cout << "+ They sum add-up to: " << CodeSum << std::endl;
+	std::cout << "+ They multiply to: "<< CodeProduct << std::endl;
+
+	int PlayerGuess;
 
 	return 0; //return statement
 }
