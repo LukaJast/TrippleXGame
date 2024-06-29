@@ -14,11 +14,26 @@ int main() {
 	int CodeProduct = CodeA * CodeB * CodeC;
 
 	std::cout << std::endl;
-	std::cout << "+ There are three numbers in the code" << std::endl;
+	std::cout << "+ There are three numbers in the code \n"
 	std::cout << "+ They sum add-up to: " << CodeSum << std::endl;
 	std::cout << "+ They multiply to: "<< CodeProduct << std::endl;
 
-	int PlayerGuess;
+	int GuessA, GuessB, GuessC;
 
+	std::cout << "Enter a number: \n";
+	std::cin >> GuessA >> GuessB >> GuessC;
+
+	//std::cout << "You entered: " << GuessA << GuessB << GuessC << std::endl;
+
+	int GuessSum = GuessA + GuessB + GuessC;
+	int GuessProduct = GuessA * GuessB * GuessC;
+
+	if (CodeSum == GuessSum && CodeProduct == GuessProduct) {
+		std::cout << "You won!!" << std::endl;
+	}
+	else {
+		std::cout << "You lost!";
+	}
+	
 	return 0; //return statement
 }
