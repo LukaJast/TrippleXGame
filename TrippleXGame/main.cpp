@@ -38,12 +38,12 @@ bool PlayGame(int Difficulty, bool Action) {
 
 	if (CodeSum == GuessSum && CodeProduct == GuessProduct) {
 		
-		std::cout << "\n\033[1mWygrales!!\033[0m\n" << "\nPrzechodzisz do nastepnej sali.\n";
+		std::cout << "\n\033[1mZamek otwarty!\033[0m\n" << "\nPrzechodzisz do nastepnej sali.\n\n";
 		
 		return true;
 
 	}	else {
-		std::cout << "\n\033[1mPrzegrales!\033[0m \n" << "\nSproboj jeszcze raz!\n";
+		std::cout << "\n\033[1mNie udalo sie!\033[0m \n" << "\nSproboj jeszcze raz!\n";
 		
 		return false;
 	}
