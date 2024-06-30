@@ -1,5 +1,5 @@
 ﻿#include <iostream> //preprocessor directive 
-//#include <string>
+#include <ctime>
 
 void PrintIntroduction(int Difficulty, bool Action) {
 	
@@ -17,16 +17,16 @@ bool PlayGame(int Difficulty, bool Action) {
 
 	PrintIntroduction(Difficulty, Action);
 
-	int CodeA = 4; //declaration statement
-	int CodeB = 4;
-	int CodeC = 4;
+	int CodeA = rand() % Difficulty + Difficulty;
+	int CodeB = rand() % Difficulty + Difficulty;
+	int CodeC = rand() % Difficulty + Difficulty;
 
 	int CodeSum = CodeA + CodeB + CodeC; //expression statement
 	int CodeProduct = CodeA * CodeB * CodeC; 
 
 	std::cout << "\n+ Sa trzy cyfry w kodzie:";
 	std::cout << "\n+ Ich suma to: " << CodeSum;
-	std::cout << "\n+ Gdy je pomnozyc, wynik bedzie: " << CodeProduct;
+	std::cout << "\n+ Ich iloczyn to: " << CodeProduct;
 
 	int GuessA, GuessB, GuessC;
 
@@ -51,27 +51,28 @@ bool PlayGame(int Difficulty, bool Action) {
 
 int main() {
 
+	srand(time(NULL));
 
 	int LevelDifficulty(1);
 	int const MaxDifficulty(5);
-	bool Action(true); // Initial value for Action
+	bool PlayerAction(true); // Initial value for Action
 
 
 	//nt LevelDifficulty = 1;
 
 	while (LevelDifficulty <= MaxDifficulty) {
 
-		bool bLevelComplete = PlayGame(LevelDifficulty, Action);
+		bool bLevelComplete = PlayGame(LevelDifficulty, PlayerAction);
 		std::cin.clear();
 		std::cin.ignore();
 		
 		if (bLevelComplete)
 		{
-			Action = true; // Set Action to true for the next level
+			PlayerAction = true; // Set Action to true for the next level
 			++LevelDifficulty; 
 		}
 		else {
-			Action = false; // Set Action to false if the level was not completed
+			PlayerAction = false; // Set Action to false if the level was not completed
 		}
 	}
 	std::cout << "\n\033[1mBrawo, udalo Ci sie otworzyc wszystkie zamki!\033[0m\n\n";
