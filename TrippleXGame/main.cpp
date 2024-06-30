@@ -46,11 +46,11 @@ int main() {
 	SetConsoleOutputCP(CP_UTF8);
 
 	int LevelDifficulty(1);
-	int MaxDifficulty(5);
+	int const MaxDifficulty(5);
 
 	//nt LevelDifficulty = 1;
 
-	while (true) {
+	while (LevelDifficulty <= MaxDifficulty) {
 
 		bool bLevelComplete = PlayGame(LevelDifficulty);
 		std::cin.clear();
