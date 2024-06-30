@@ -2,11 +2,11 @@
 
 void PrintIntroduction() {
 
-	std::cout << "You entered the vault of the ancient vampire. \n";
+	std::cout << "\n\nYou entered the vault of the ancient vampire. \n";
 	std::cout << "You need to guess three digits to open the mechanical lock! \n\n";
 
 }
-void PlayGame() {
+bool PlayGame() {
 
 	PrintIntroduction();
 
@@ -31,13 +31,19 @@ void PlayGame() {
 
 	if (CodeSum == GuessSum && CodeProduct == GuessProduct) {
 		std::cout << "\nYou won!!";
+		return true;
 	}	else {
 		std::cout << "\nYou lost!";
+		return false;
 	}
 }
 
 int main() {
-	
-	PlayGame();
+	while (true) {
+		bool bLevelComplete = PlayGame();
+		std::cin.clear();
+		std::cin.ignore();
+	}
+
 	return 0; //return statement
 }
